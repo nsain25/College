@@ -1,0 +1,82 @@
+//Savimg account provides compound interest and a withdrawl facilities but no check book facilities. Current account provides no interest but allows cheque book facilities. It should allow maintain minimum balance and if balance falls below this level, serive charge is imposed. Create a class account that accepts depositis from customer and update balance. It should display balance and compute interest
+
+import java.util.Scanner;
+class Account{
+int acc_no;
+String name;
+int balance;
+Scanner sc = new Scanner(System.in);
+void getdata()
+{
+System.out.println("Enter the account number:");
+acc_no = sc.nextInt();
+System.out.println("Enter the name of the account holder:");
+name = sc.next();
+System.out.println("Enter the balance:");
+balance = sc.nextInt();
+}
+void display()
+{
+System.out.println("The account number is:" + acc_no);
+System.out.println("The name of the account holder is:" + name);
+System.out.println("The balance is:" + balance);
+}
+}
+class Saving extends Account{
+int rate;
+int time;
+int interest;
+void getdata()
+{
+super.getdata();
+System.out.println("Enter the rate of interest:");
+rate = sc.nextInt();
+System.out.println("Enter the time:");
+time = sc.nextInt();
+}
+void display()
+{
+super.display();
+interest = (balance*rate*time)/100;
+System.out.println("The interest is:" + interest);
+}
+}
+class Current extends Account{
+int min_bal;
+int service_charge;
+void getdata()
+{
+super.getdata();
+System.out.println("Enter the minimum balance:");
+min_bal = sc.nextInt();
+}
+void display()
+{
+super.display();
+if(balance<min_bal)
+{
+service_charge = 100;
+System.out.println("The service charge is:" + service_charge);
+}
+}
+}
+class Bank{
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the type of account:");
+String type = sc.next();
+if(type.equals("Saving"))
+{
+Saving s = new Saving();
+s.getdata();
+s.display();
+}
+else if(type.equals("Current"))
+{
+Current c = new Current();
+c.getdata();
+c.display();
+}
+}
+}
