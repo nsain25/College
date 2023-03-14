@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class Largest {
+    
+    Largest(int n1, int n2)
+	{
+	 if(n1>n2)
+	 {
+		 System.out.println("Number1 is greater than Number2");
+	 }
+	 else
+	 {
+		 System.out.println("Number2 is greater than Number1");
+	 }
+	}
+
+
+    public void display() {
+    }
+}
+class LargestTwo{
+   public static void main(String args[]) 
+    {   
+      Scanner sc= new Scanner(System.in);
+      System.out.println("Enter the value of number1");
+      int num1= sc.nextInt();   
+System.out.println("Enter the value of number2");
+      int num2= sc.nextInt();      	  
+      Largest T =new Largest( num1, num2);
+      T.display();
+	      sc.close();
+   }
+ }
