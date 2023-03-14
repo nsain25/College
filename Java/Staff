@@ -1,0 +1,137 @@
+//an educational institution wishes to maintain a database of its employees. The database is divided into a no. of classes whose hirearchy
+import java.util.Scanner;
+class Education {
+    int code;
+    String name;
+ Scanner sc = new Scanner(System.in);
+ void getdata()
+ {
+    System.out.println("Enter Staff code:");
+    code = sc.nextInt();
+    System.out.println("Enter name of the staff:");
+    name = sc.next();
+ }
+ void display()
+ {
+    System.out.println("The staff code is:" + code);
+    System.out.println("The name of the staff is:" + name);
+ }
+    
+}
+
+class Teacher extends Education {
+    String subject;
+    String publication;
+    Scanner sc = new Scanner(System.in);
+    void getdata()
+    {
+        super.getdata();
+        System.out.println("Enter the subject:");
+        subject = sc.nextLine();
+        System.out.println("Enter the publication:");
+        publication = sc.nextLine();
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("The subject is:" + subject);
+        System.out.println("The publication is:" + publication);
+    }
+}
+
+class Officer extends Education {
+    String grade;
+    Scanner sc = new Scanner(System.in);
+    void getdata()
+    {
+        super.getdata();
+        System.out.println("Enter the grade:");
+        grade = sc.nextLine();
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("The grade is:" + grade);
+    }
+}
+
+class Typist extends Education {
+    int speed;
+    Scanner sc = new Scanner(System.in);
+    void getdata()
+    {
+        super.getdata();
+        System.out.println("Enter the speed:");
+        speed = sc.nextInt();
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("The speed is:" + speed);
+    }
+}
+
+class Regular extends Typist {
+    int salary;
+    Scanner sc = new Scanner(System.in);
+    void getdata()
+    {
+        super.getdata();
+        System.out.println("Enter the salary:");
+        salary = sc.nextInt();
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("The salary is:" + salary);
+    }
+}
+
+class Casual extends Typist {
+    int dailywages;
+    Scanner sc = new Scanner(System.in);
+    void getdata()
+    {
+        super.getdata();
+        System.out.println("Enter the dailywages:");
+        dailywages = sc.nextInt();
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("The dailywages is:" + dailywages);
+    }
+}
+
+class staff {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter choice : 1 2 3 4 5");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                Teacher t = new Teacher();
+                t.getdata();
+                t.display();
+                break;
+            case 2:
+                Officer o = new Officer();
+                o.getdata();
+                o.display();
+                break;
+            case 3:
+                Regular r = new Regular();
+                r.getdata();
+                r.display();
+                break;
+            case 4:
+                Casual c = new Casual();
+                c.getdata();
+                c.display();
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+        sc.close();
+    }
+}
