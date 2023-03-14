@@ -1,0 +1,78 @@
+import java.util.*;
+class AnnualResult 
+{
+    public static void main(String[] args) 
+    {
+        int n=10; 
+        String students[]=new String[10];
+        int rollnos[]=new int[10];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < n; i++) 
+        {
+            String name;
+            int rollno;
+            System.out.println("Enter the name:");
+            name = sc.next();
+            System.out.println("Enter the rollno:");
+            rollno = sc.nextInt();
+            students[i]=name;
+            rollnos[i]=rollno;
+
+        }
+        int marks[][]=new int[100][100];
+        for (int i = 0; i < n; i++) 
+        {
+            for (int j = 0; j < 5; j++) 
+            {
+                System.out.println("Enter the marks of student "+students[i]+" in subject "+(j+1));
+                marks[i][j]=sc.nextInt();
+            }
+        }
+        int totalmarks[]=new int[100];
+        for (int i = 0; i < n; i++) 
+        {
+            totalmarks[i]=0;
+            for (int j = 0; j < 5; j++) 
+            {
+                totalmarks[i]+=marks[i][j];
+            }
+        }
+        int highestmarks[]=new int[100];
+        int highestmarksrollno[]=new int[100];
+        for (int i = 0; i < 5; i++) 
+        {
+            highestmarks[i]=0;
+            for (int j = 0; j < n; j++) 
+            {
+                if(marks[j][i]>highestmarks[i])
+                {
+                    highestmarks[i]=marks[j][i];
+                    highestmarksrollno[i]=rollnos[j];
+                }
+            }
+        }
+        int highesttotalmarks=0;
+        int highesttotalmarksrollno=0;
+        for (int i = 0; i < n; i++) 
+        {
+            if(totalmarks[i]>highesttotalmarks)
+            {
+                highesttotalmarks=totalmarks[i];
+                highesttotalmarksrollno=rollnos[i];
+            }
+        }
+        System.out.println("The total marks obtained by each student is:");
+        for (int i = 0; i < n; i++)
+        {
+            System.out.println("The total marks obtained by student "+students[i]+" is "+totalmarks[i]);
+        }
+        System.out.println("The highest marks in each subject and the roll no.of student who secured it is:");
+        for (int i = 0; i < 5; i++) 
+        {
+            System.out.println("The highest marks in subject "+(i+1)+" is "+highestmarks[i]+" and the roll no.of student who secured it is "+highestmarksrollno[i]);
+        }
+        System.out.println("The student who secured highest total marks in the class is:");
+        System.out.println("The student who secured highest total marks in the class is "+highesttotalmarks+" and the roll no.of student who secured it is "+highesttotalmarksrollno);
+    sc.close();
+}
+}
