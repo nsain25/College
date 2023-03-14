@@ -30,17 +30,3 @@ class Mycalculator
         System.out.println("Sum of factors of the number: " + C1.divisorsum(n));
     }
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
