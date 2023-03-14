@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+class Temperature {
+
+    public static void main(String[] args) {
+
+        // create a 2D array to hold the temperatures
+        int[][] temperature = new int[10][2];
+
+        // read in the temperatures
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter temperature for day " + (i + 1) + " in city 1: ");
+            temperature[i][0] = sc.nextInt();
+            System.out.print("Enter temperature for day " + (i + 1) + " in city 2: ");
+            temperature[i][1] = sc.nextInt();
+        }
+
+        // find the highest and lowest temperatures and their corresponding cities and dates
+        int highestTemp = temperature[0][0];
+        int lowestTemp = temperature[0][0];
+        int highestTempCity = 1;
+        int lowestTempCity = 1;
+        int highestTempDate = 1;
+        int lowestTempDate = 1;
+        for (int i = 0; i < 10; i++) {
+            if (temperature[i][0] > highestTemp) {
+                highestTemp = temperature[i][0];
+                highestTempCity = 1;
+                highestTempDate = i + 1;
+            }
+            if (temperature[i][1] > highestTemp) {
+                highestTemp = temperature[i][1];
+                highestTempCity = 2;
+                highestTempDate = i + 1;
+            }
+            if (temperature[i][0] < lowestTemp) {
+                lowestTemp = temperature[i][0];
+                lowestTempCity = 1;
+                lowestTempDate = i + 1;
+            }
+            if (temperature[i][1] < lowestTemp) {
+                lowestTemp = temperature[i][1];
+                lowestTempCity = 2;
+                lowestTempDate = i + 1;
+            }
+        }
+
+        // print out the results
+        System.out.println("The highest temperature was " + highestTemp + " on day " + highestTempDate + " in city " + highestTempCity);
+        System.out.println("The lowest temperature was " + lowestTemp + " on day " + lowestTempDate + " in city " + lowestTempCity);
+        sc.close();
+}
+
+}
