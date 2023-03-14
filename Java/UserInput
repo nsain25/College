@@ -1,0 +1,18 @@
+import java.util.Scanner;
+class UserInput {
+    public static void main(String[] args) 
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a integer: ");
+        int number = input.nextInt();
+        System.out.println("Enter a double: ");
+        double number2 = input.nextDouble();
+        System.out.println("Enter a string: ");
+        String string = input.next();
+
+        System.out.println("You entered: " + number);
+        System.out.println("You entered: " + number2);
+        System.out.println("You entered: " + string);
+        input.close();
+    }
+}
