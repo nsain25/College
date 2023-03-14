@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class Distance
+{
+    public static void main(String[]args)
+    {
+        float u,t,a,s=0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter time interval: ");
+        int interval = sc.nextInt();
+        for (int i = 0; i < interval; i++)
+        {
+            System.out.println("time interval" +interval);
+            System.out.println("Enter initial velocity: ");
+            u = sc.nextFloat();
+            System.out.println("Enter acceleration: ");
+            a = sc.nextFloat();
+            System.out.println("Enter time: ");
+            t = sc.nextFloat();
+            s = u*t + 0.5f*a*t*t;
+            }
+            System.out.println("Distance travelled: " +s);
+            sc.close();
+            }
+                
+        }
+        
