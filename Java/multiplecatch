@@ -1,0 +1,22 @@
+public class multiplecatch 
+{
+public static void main(String args[])
+{
+    try
+    {
+        int a=10,b=0;
+        int c[]={1,2,3,4,5};
+        int d=b/a;
+        System.out.println ("d= "+d);
+        c[6]=10;
+    }
+    catch(ArithmeticException e)
+    {
+        System.out.println("Arithmetic Exception");
+    }
+    catch(ArrayIndexOutOfBoundsException e)
+    {
+        System.out.println("Array Index Out Of Bounds Exception");
+    }
+}
+}
