@@ -1,0 +1,16 @@
+class exc3 {
+public static void main(String args[])
+{
+   int arr[]={1,2,3,4,5};
+    try
+    {
+        arr[6]=10;
+        System.out.println("in try block");
+    }
+    catch(ArrayIndexOutOfBoundsException e)
+    {
+        System.out.println("Array index out of bounds");
+    }
+    
+}
+}
