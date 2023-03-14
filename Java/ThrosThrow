@@ -1,0 +1,17 @@
+//Write a Java program using throw and throws
+import java.io.IOException;
+
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            throwExample();
+        } catch (IOException e) {
+            System.out.println("Caught IOException: " + e.getMessage());
+        }
+    }
+
+    public static void throwExample() throws IOException {
+        // simulate an IO error
+        throw new IOException("IO error occurred");
+    }
+}
