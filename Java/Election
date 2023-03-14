@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Election {
+public static void main(String[] args) {
+    int vote [] = new int[6];
+    int votes = 10;
+    while(votes>0)
+    {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Enter the vote:");
+        int v = sc.nextInt();
+        if(v==1)
+        {
+            vote[1]++;
+        }
+        else if(v==2)
+        {
+            vote[2]++;
+        }
+        else if(v==3)
+        {
+            vote[3]++;
+        }
+        else if(v==4)
+        {
+            vote[4]++;
+        }
+        else if(v==5)
+        {
+            vote[5]++;
+        }
+        else
+        {
+            System.out.println("Invalid vote");
+        }
+
+        votes--;
+    }
+    for (int i = 1; i < 6; i++) {
+        System.out.println("Candidate " + i + " got " + vote[i] + " votes");
+        
+    }
+    
+}
+
+}
