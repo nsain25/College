@@ -1,0 +1,18 @@
+Script Answer Key:
+enable
+configure terminal
+hostname R1
+line console 0
+password letmein
+login
+exit
+enable password cisco
+enable secret itsasecret
+service password-encryption
+banner motd $Unauthorized access is strictly prohibited.$
+exit
+copy running-config startup-config
+
+copy startup-config flash:
+
+https://itexamanswers.net/10-1-4-packet-tracer-configure-initial-router-settings-answers.html
