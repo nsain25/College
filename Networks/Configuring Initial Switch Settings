@@ -27,3 +27,5 @@ service password-encryption
 banner motd #Authorized access only. Unauthorized access is prohibited and violators will be prosecuted to the full extent of the law.#
 end
 copy running-config startup-config
+
+https://itexamanswers.net/2-2-3-4-packet-tracer-configuring-initial-switch-settings-instruction-answers.html
