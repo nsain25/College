@@ -1,0 +1,29 @@
+Instructions:
+Switch 1 – S1
+enable
+configure terminal
+hostname S1
+line console 0
+password letmein
+login
+enable password c1$c0
+enable secret itsasecret
+service password-encryption
+banner motd #This is a secure system. Authorized Access Only!#
+end
+copy running-config startup-config
+
+
+Switch 2 – S2
+enable
+configure terminal
+hostname S2
+line console 0
+password letmein
+login
+enable password c1$c0
+enable secret itsasecret
+service password-encryption
+banner motd #Authorized access only. Unauthorized access is prohibited and violators will be prosecuted to the full extent of the law.#
+end
+copy running-config startup-config
