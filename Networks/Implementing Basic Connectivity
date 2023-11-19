@@ -1,0 +1,28 @@
+Switch>en
+Switch#configure terminal
+Switch(config)#hostname S2
+S2(config)#line console 0
+S2(config-line)#password cisco
+S2(config-line)#login
+S2(config-line)#exit
+S2(config)#enable secret class
+S2(config)#banner motd #Authorized access only. Violators will be prosecuted to the full extent of the law.#
+S2(config)#interface vlan 1
+S2(config-if)#ip address 192.168.1.254 255.255.255.0
+S2(config-if)#no sh
+S2(config-if)#exit
+S2(config)#exit
+S2#copy running-config startup-config
+
+Verify network connectivity.
+a. Click PC1, and then click the Desktop tab.
+
+b. Click Command Prompt.
+
+c. Ping the IP address for PC2.
+
+d. Ping the IP address for S1.
+
+e. Ping the IP address for S2.
+
+Note: You can also use the same ping command on the switch CLI and on PC2.
