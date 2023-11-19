@@ -1,0 +1,22 @@
+Instructions
+R1
+R2
+cisco
+R1>enable 
+class
+R1#config terminal
+R1(config)#interface gigabitethernet 0/0
+R1(config-if)#ip address 192.168.10.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#description LAN connection to S1
+R1(config-if)#exit
+R1(config)#interface gigabitEthernet 0/1
+R1(config-if)#ip address 192.168.11.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#description LAN connection to S2
+R1(config-if)#end
+
+R1#copy running-config startup-config
+
+
+https://itexamanswers.net/10-3-4-packet-tracer-connect-a-router-to-a-lan-answers.html
