@@ -1,0 +1,27 @@
+a. Console into the switch and enter global configuration mode.
+
+Switch> enable
+Switch# configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#
+b. Assign a hostname to the switch based on the Addressing Table.
+
+Switch(config)# hostname S1
+c. Disable DNS lookup.
+
+S1(config)# no ip domain-lookup
+d. Configure and enable the SVI interface for VLAN 1.
+
+S1(config)# interface vlan 1
+S1(config-if)# ip address 192.168.1.2 255.255.255.0
+S1(config-if)# no shutdown
+S1(config-if)# end
+*Mar 1 00:07:59.048: %SYS-5-CONFIG_I: Configured from console by console
+Step 4: Verify network connectivity.
+Ping the switch from PC-A.
+
+Were the pings successful?
+
+The pings should be successful.
+
+https://itexamanswers.net/7-2-7-lab-view-network-device-mac-addresses-answers.html
