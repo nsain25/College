@@ -1,0 +1,25 @@
+Device Configs
+R1
+enable
+configure terminal
+interface GigabitEthernet0/0
+ip address 192.168.100.1 255.255.255.224
+no shutdown
+interface GigabitEthernet0/1
+ip address 192.168.100.33 255.255.255.224
+no shutdown
+end
+S3
+enable
+configure terminal
+interface Vlan1
+ip address 192.168.100.66 255.255.255.224
+no shutdown
+ip default-gateway 192.168.100.65
+end
+PC4
+IP address: 192.168.100.126 /27
+Subnet Mask: 255.255.255.224
+Default gateway: 192.168.100.97
+
+https://itexamanswers.net/11-7-5-packet-tracer-subnetting-scenario-instruction-answers.html
