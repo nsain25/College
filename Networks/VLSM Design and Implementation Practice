@@ -1,0 +1,23 @@
+Devices configuration - Answer
+Building 1
+en
+conf t
+int g0/0
+ip add 10.11.48.97 255.255.255.240
+no shut
+int g0/1
+ip add 10.11.48.65 255.255.255.224
+no shut
+ASW3
+en
+conf t
+int vlan 1
+ip add 10.11.48.114 255.255.255.248
+no shut
+ip def 10.11.48.113
+Host-D
+IP Address: 10.11.48.62
+Subnet Mask: 255.255.255.192
+Default Gateway: 10.11.48.1
+
+https://itexamanswers.net/11-9-3-packet-tracer-vlsm-design-and-implementation-practice-answers.html
