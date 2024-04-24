@@ -32,6 +32,10 @@ def minimax(depth, nodeIndex, maximizingPlayer,
 			if beta <= alpha: 
 				break		
 		return best 
-if __name__ == "__main__": 
-	values = [3, 5, 6, 9, 1, 2, 0, -1] 
-	print("The optimal value is :", minimax(0, 0, True, values, MIN, MAX)) 
+if __name__ == "__main__":
+    values = []
+    n = int(input("Enter the number of values: "))
+    for i in range(n):
+        value = int(input(f"Enter value {i + 1}: "))
+        values.append(value)
+    print("The optimal value is :", minimax(0, 0, True, values, MIN, MAX))
